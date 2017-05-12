@@ -1,2 +1,2 @@
 # AngularJS-Work
-Works upon JSON data to display the travel info in a creative way
+Includes basic projects to creative 
