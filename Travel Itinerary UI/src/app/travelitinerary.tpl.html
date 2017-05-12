@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TRAVEL ITINERARY UI</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+    <script src="travel_itinerary.js"></script>
+    <link rel="stylesheet" href="../styles/main.css">
+
+
+</head>
+<body ng-app="travelitinerary" ng-controller="travelItineraryCtrl as vm">
+    <header id="hdr">
+        <h1> WELCOME TO TRAVEL ITINERARY</h1>
+    </header>
+    <div id="wrapper" class="content-wrapper">
+        <h2> AVAILABLE TRIPS </h2>
+        <P>Click on view more to see more information about Flight or Lodging</P>
+        <table>
+            <thead>
+                <tr>
+                    <th><b>Destination</b></th>
+                    <th><b>Start Date </b> </br><span>(mm/dd/yyyy)</span></th>
+                    <th>Flights Info
+                    </th>
+                    <th>
+                        Lodging Info
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="trip in vm.tripsData.trips | orderBy:sortColumn:reverseSort">
+                    <td>{{trip.destination}}</td>
+                    <td>{{trip.tripStartDate  | date:"mm/dd/yyyy" }}</td>
+                    <td>
+                        <ul>
+                            <li ng-repeat="flightInfo in trip.flightsInfo">
+                                Airline: {{flightInfo.airline}} <a ng-click="vm.showFlightInfo(flightInfo,trip.destination)" href="#">view more</a></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li ng-repeat="lodgingInfo in trip.lodgingInfo">
+                                Lodge Name:  {{lodgingInfo.lodge}}  <a ng-click="vm.showLodgingInfo(lodgingInfo,trip.destination)" href="#">view more</a>
+                            </li>
+                        </ul>
+                     </td>
+                </tr>
+            </tbody>
+
+        </table>
+            <div ng-if="showAirlineDtls" class="arrow_box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Destination Place</th>
+                            <th>Airline</th>
+                            <th>RecordLocator</th>
+                            <th>To Info</th>
+                            <th>Return Info &emsp;&emsp;&emsp;&emsp;
+                                <a href="#" ng-click="vm.closeFlightInfo()">close</a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{flightDestinationPlace}}</td>
+                            <td>
+                                 Airline: {{flightDetail.airline}}
+                            </td>
+                            <td>
+                                RecordLocator :{{flightDetail.recordLocator}}
+                            </td>
+                            <td>
+                                <b>To-From:</b> {{flightDetail.toInfo.toFrom}}</br>
+
+                                <b>Date:</b> {{flightDetail.toInfo.date}}</br>
+                                <b>Flight Number:</b> {{flightDetail.toInfo.flightNum}}</br>
+                                <b>Departure:</b> {{flightDetail.toInfo.departure}}</br>
+                                <b> Arrival:</b>{{flightDetail.toInfo.arrival}}
+                            </td>
+                            <td>
+                                <b>To-From:</b> {{flightDetail.returnInfo.toFrom}}</br>
+                                <b>Date:</b> {{flightDetail.returnInfo.date}}</br>
+                                <b>Flight Number:</b> {{flightDetail.returnInfo.flightNum}}</br>
+                                <b>Departure:</b> {{flightDetail.returnInfo.departure}}</br>
+                                <b> Arrival:</b>{{flightDetail.returnInfo.arrival}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div ng-if="showLodgingDetls" class="arrow_box">
+                <table>
+                    <thead>
+                        <th>Destination Place</th>
+                        <th>Lodge</th>
+                        <th>Address</th>
+                        <th>Check-in & Check-out</th>
+                        <th>Reservation Number &emsp;&emsp;&emsp;&emsp;
+                            <a href="#" ng-click="vm.closeLodgingInfo()">close</a></th>
+                    </thead>
+                    <tbody>
+                        <td>{{lodgeDestinationPlace}}</td>
+                        <td>{{lodgingDetail.lodge}}</td>
+                        <td>Address1: {{lodgingDetail.address1}} <br>
+                            Address2: {{lodgingDetail.address2}}</td>
+                        <td>Check-in:{{lodgingDetail.checkIn}}</br>
+                            Check-out:{{lodgingDetail.checkOut}}
+                        </td>
+                        <td>
+                            Reservation Num: {{lodgingDetail.reservationNum}}
+                        </td>
+                    </tbody>
+                </table>
+
+            </div>
+    </div>
+
+</body>
+</html>
