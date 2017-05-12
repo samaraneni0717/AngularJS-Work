@@ -1,0 +1,162 @@
+{
+"trips": [
+{
+"tripStartDate": "4/3/2017",
+"destination": "Costa Rica",
+"flightsInfo": [
+{
+"airline": "AA",
+"recordLocator": "KKJVZRRRR",
+"toInfo": {
+"toFrom": "DFW-SJO",
+"date": "8/1/2017",
+"flightNum": "936",
+"departure": "2:50pm",
+"arrival": "5:54pm"
+},
+"returnInfo": {
+"toFrom": "SJO-DFW",
+"date": "8/15/2017",
+"flightNum": "2836",
+"departure": "6:50am",
+"arrival": "12:19pm"
+}
+}
+],
+"lodgingInfo": [
+{
+"lodge": "AIRBNB",
+"address1": "Avenida 5 Edificio Vicente Lachner S., San José, San José, Costa Rica",
+"address2": "Apt #501",
+"checkIn": "8/1/2017",
+"checkOut": "8/15/2017",
+"reservationNum": "32468223WA"
+}
+],
+"notes": []
+},
+{
+"tripStartDate": "9/25/2017",
+"destination": "Tokyo Japan",
+"flightsInfo": [
+{
+"airline": "AA",
+"recordLocator": "AWECBWMKJN",
+"toInfo": {
+"toFrom": "DFW-NRT",
+"date": "9/25/2017",
+"flightNum": "178765",
+"departure": "10:45am",
+"arrival": "2:00pm"
+},
+"returnInfo": {
+"toFrom": "NRT-DFW",
+"date": "5/2/2017",
+"flightNum": "9860",
+"departure": "6:30Pm",
+"arrival": "4:25pm"
+}
+}
+],
+"lodgingInfo": [
+{
+"lodge": "JR Kyushu Hotel Blossom Shinjuku",
+"address1": "",
+"address2": "",
+"checkIn": "9/25/2017 4:00pm",
+"checkOut": "10/2/2017 12:00pm",
+"reservationNum": "053-00016453-01"
+}
+],
+"notes": []
+},
+{
+"tripStartDate": "11/14/2017",
+"destination": "London",
+"flightsInfo": [
+{
+"airline": "AA",
+"recordLocator": "PKKLOIORRPD",
+"toInfo": {
+"toFrom": "LAX-LHR",
+"date": "11/14/2017",
+"flightNum": "1342108",
+"departure": "5:55pm",
+"arrival": "12:40pm"
+},
+"returnInfo": {
+"toFrom": "LHR-LAX",
+"date": "5/21/2017",
+"flightNum": "1987609",
+"departure": "12:15pm",
+"arrival": "3:40pm"
+}
+}
+],
+"lodgingInfo": [
+{
+"lodge": "AIRBNB",
+"address1": "The Graphite Apartments, 51 Provost Street Flat 14, London, N17FD, United Kingdom",
+"address2": "",
+"checkIn": "5/15/2017 3:00pm",
+"checkOut": "5/21/2017 1:00pm",
+"reservationNum": "HMBANBCLKJIOTSR"
+}
+],
+"notes": []
+},
+{
+"tripStartDate": "12/7/2017",
+"destination": "Medellin Columbia",
+"flightsInfo": [
+{
+"airline": "AA",
+"recordLocator": "GDSFGGIUYRL",
+"toInfo": {
+"toFrom": "DFW-MIA",
+"date": "12/7/2017",
+"flightNum": "969",
+"departure": "5:30am",
+"arrival": "9:14am",
+"connections": [
+{
+"toFrom": "MIA-MDE",
+"date": "12/7/2017",
+"flightNum": "6571127",
+"departure": "10:55am",
+"arrival": "1:34pm"
+}
+]
+},
+"returnInfo": {
+"toFrom": "MDE-MIA",
+"date": "12/24/2017",
+"flightNum": "114322228",
+"departure": "2:24pm",
+"arrival": "7:01pm",
+"connections": [
+{
+"toFrom": "MIA-DFW",
+"date": "12/24/2017",
+"flightNum": "186755294",
+"departure": "9:35pm",
+"arrival": "11:57pm"
+}
+]
+}
+}
+],
+"lodgingInfo": [
+{
+"lodge": "The Charlee Hotel",
+"address1": "Calle 9a 37 16, Medellin Antioquia",
+"address2": "",
+"checkIn": "12/7/2017 3:00pm",
+"checkOut": "12/17/2017 1:00pm",
+"reservationNum": "854574573222172594448"
+}
+],
+"notes": []
+}
+]
+}
