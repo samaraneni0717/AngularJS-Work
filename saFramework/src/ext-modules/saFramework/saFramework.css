@@ -1,0 +1,29 @@
+.sa-title-bar{
+    background-color: white;
+    padding: 0 20px;
+    border-bottom: 2px solid black;
+}
+
+.sa-title-area{
+    display:inline-block;
+}
+
+.sa-icon{
+    display:inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 8px;
+    vertical-align: top;
+    border: 1px  solid #999;
+}
+
+.sa-logo-title{
+    color: #111;
+    margin-top: 6px;
+    font-size: 22px;
+}
+
+.sa-logo-subtitle{
+    font-size: 13px;
+    margin-top: -13px;
+}

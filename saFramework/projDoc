@@ -1,0 +1,22 @@
+****May 19,2017 6.21pmEST
+
+This project is building a framework which has dashboards, buttons
+
+Step 1:
+Decide what modules are needed
+1)saFramework
+2)saMenu
+3)saDashboard (here ng-view lies where we navigate)
+4)app
+
+
+Step2:Defining dependencies
+Framework has Menu and Dashboard as dependencies
+Menu and Dashboard has 0 dependencies
+app has framework as dependency
+
+
+Step3:Update the index.html
+The UI needs a right to left filled--use container-fluid bootstrap css
+Use a custome directive of the framework
+Add CSS to the 
