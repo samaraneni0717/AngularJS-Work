@@ -19,4 +19,18 @@ app has framework as dependency
 Step3:Update the index.html
 The UI needs a right to left filled--use container-fluid bootstrap css
 Use a custome directive of the framework
-Add CSS to the 
+Add CSS to the
+
+Step 4: Styling the header and controls in frameworktpl.html
+We gonna add three buttons btn-primary btn-success btn-warning
+
+Step5: Making the F/W responsive (you can check in F12 from toggle device mode)
+Go to http://getbootstrap.com/css/ and copy the "meta..." media query link
+
+Step6: Add attributes to custom directive
+U can add the path of the image as one property to the customDir
+
+
+*********Building a 'MENU' component
+Step1: Build a custom directive and this should be embedded inside framework dir, so set transclude to true inside the f/w dir\
+Step2: Inside the menu, the items should be wrapped so set the translcude in menu to true

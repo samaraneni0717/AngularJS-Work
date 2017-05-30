@@ -2,14 +2,16 @@
  * Created by amarenes on 5/19/2017.
  */
 "use strict";
-
+//to bind  a string one time '@' symbol
+//Attributes in directive shoulbe be in camel case and the same should be in snake case in html
 angular.module("saFramework").directive("saFramework", function () {
     return{
         //we may want to embed the menu within the saFramework so set transclusion to true
         transclude:true,
         //isolate scope
         scope:{
-
+               title:'@',
+                subtitle:'@'
         },
         controller:"saFrameworkCtrl",
         //whenever you see this templateurl it means there may be dozens of projects gonna use this component

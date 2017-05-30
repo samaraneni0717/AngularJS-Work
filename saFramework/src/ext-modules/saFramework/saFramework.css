@@ -6,6 +6,10 @@
 
 .sa-title-area{
     display:inline-block;
+    text-align: center;
+}
+.sa-logo-area{
+    text-align: center;
 }
 
 .sa-icon{
@@ -26,4 +30,23 @@
 .sa-logo-subtitle{
     font-size: 13px;
     margin-top: -13px;
+}
+/* 60 px because icon is 50 px this makes it look good */
+.sa-right-side-controls{
+    line-height: 60px;
+}
+
+.sa-right-side-controls >div{
+    text-align: center;
+}
+/* media query for portrait tablet to landscape and desktop*/
+@media screen and (min-width: 768px){
+    .sa-right-side-controls > div {
+        text-align: right;
+    }
+
+    .sa-logo-area{
+        text-align: left;
+    }
+
 }

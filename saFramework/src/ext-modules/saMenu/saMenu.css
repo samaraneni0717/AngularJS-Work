@@ -1,0 +1,53 @@
+.sa-menu-area{
+    padding:30px 0px 0px 0px;
+    background-color: black;
+    color:darkgray;
+    width: 200px;
+    height: 100vh;
+}
+
+.sa-menu-area .btn:hover{
+    color:darkgrey;
+}
+
+.sa-menu-area ul{
+    padding-left:0px;
+}
+
+.sa-menu{
+    list-style-type: none;
+    vertical-align: top;
+}
+/* display insline helps in making the menu horizontal*/
+.sa-menu ul{
+    display: inline;
+}
+
+.sa-menu li{
+    line-height: 3em;
+    cursor:pointer;
+}
+
+.sa-menu li div{
+    display: inline-block;
+    width:90%;
+    padding-left: 16px;
+}
+
+.sa-selectableItem:hover{
+    background-color:#555;
+}
+/* to avoid selecting text we use this */
+.sa-noselect{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.sa-menu-icon{
+    margin-right: 10px;
+}

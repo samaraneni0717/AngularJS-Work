@@ -1,18 +1,25 @@
 
 <!--for title bar-->
 <div class="sa-title-bar">
-    <div class="sa-logo-area">
-        <img class="sa-icon" ng-src=""/>
-        <div class="sa-title-area">
-            <p class="sa-logo-title">
-                Adventures
-            </p>
-            <p class="sa-logo-subtitle">
-                Admin app
-            </p>
+    <div class="row">
+        <div class="sa-logo-area col-md-6">
+            <img class="sa-icon" ng-src="src/content/images/sai Pic.jpg"/>
+            <div class="sa-title-area">
+                <p class="sa-logo-title">
+                   {{title}}
+                </p>
+                <p class="sa-logo-subtitle">
+                    {{subtitle}}
+                </p>
+            </div>
+        </div>
+        <div class="sa-right-side-controls col-md-6">
+            <div>
+                <button class="btn btn-primary">Button 1</button>
+                <button class="btn btn-success">Button 2</button>
+                <button class="btn btn-warning">Button 3</button>
+            </div>
         </div>
     </div>
-    <div class="sa-right-side-controls">
-
-    </div>
 </div>
+<div ng-transclude></div>
