@@ -11,6 +11,11 @@ angular.module("saMenu").directive('saMenuItem',function () {
        require:'^saMenu',
        templateUrl:"../ext-modules/saMenu/saMenuItem.tpl.html",
        link:function (scope, el, attr, ctrl) {
+
+           scope.isActive = function () {
+               // comparison with the selectedElement available from the function in the controller
+               return el === ctrl.getActiveElement();
+           };
             el.on('click',function (evt) {
                 evt.stopPropagation();
                 evt.preventDefault();

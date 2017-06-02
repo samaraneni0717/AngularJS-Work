@@ -4,6 +4,10 @@
 'use strict'
 angular.module('saMenu').controller('saMenuCtrl',
     ['$scope','$rootScope',function ($scope,$rootScope) {
+             $scope.showMenu = true;
+             this.getActiveElement = function () {
+                 return $scope.activeElement;
+             };
              this.setActiveElement =function (el) {
                  $scope.activeElement = el;
              };
@@ -17,6 +21,11 @@ angular.module('saMenu').controller('saMenuCtrl',
                  $rootScope.$broadcast('sa-menu-item-selected-event',
                      {route:route});
              };
+            
+             $scope.$on('sa-menu-show',function (evt, data) {
+                  $scope.showMenu = data.show;
+             });
+
         }
     ]
 );

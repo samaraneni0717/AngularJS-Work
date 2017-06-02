@@ -51,3 +51,10 @@
 .sa-menu-icon{
     margin-right: 10px;
 }
+
+.sa-menu-active-indicator{
+    float:right;
+    color: #dddddd;
+    margin-right : 0;
+    margin-top:8px;
+}
