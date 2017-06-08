@@ -5,13 +5,18 @@
 
 angular.module("saFramework").controller("saFrameworkCtrl",['$scope','$window','$timeout','$rootScope',
     function ($scope,$window,$timeout,$rootScope) {
+        $scope.isMenuButtonVisible = true;
+        $scope.isMenuVertical = true;
+
         $scope.$on('sa-menu-item-selected-event',function (evt,data) {
             $scope.routeString = data.route;
             checkWidth();
             broadcastMenuState();
         });
-        $scope.isMenuButtonVisible = true;
 
+        $scope.$on('sa-menu-orientation-changed-event',function (evt,data) {
+            $scope.isMenuVertical = data.isMenuVertical;
+        });
         // now to hide the menu button for devices with >768px
         //whenever the f/w is resized or device rotated or browser window is resized
         //on pro about jQuery is we can add Namespace to the event, in this case it is saFramework

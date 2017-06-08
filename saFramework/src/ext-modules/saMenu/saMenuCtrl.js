@@ -1,15 +1,21 @@
 /**
  * Created by amarenes on 5/27/2017.
  */
-'use strict'
+'use strict';
 angular.module('saMenu').controller('saMenuCtrl',
     ['$scope','$rootScope',function ($scope,$rootScope) {
+
+            $scope.isVertical = true;
              $scope.showMenu = true;
              this.getActiveElement = function () {
                  return $scope.activeElement;
              };
              this.setActiveElement =function (el) {
                  $scope.activeElement = el;
+             };
+             
+             this.isVertical = function () {
+                 return $scope.isVertical;
              };
 
              this.setRoute = function (route) {
@@ -25,6 +31,15 @@ angular.module('saMenu').controller('saMenuCtrl',
              $scope.$on('sa-menu-show',function (evt, data) {
                   $scope.showMenu = data.show;
              });
+            //whoever is using this component need to know the orientation so broadcast the event
+             $scope.toggleMenuOrientation = function () {
+                 $scope.isVertical = !$scope.isVertical;
+                 $rootScope.$broadcast('sa-menu-orientation-changed-event',
+                     {
+                         isMenuVertical: $scope.isVertical
+                     }
+                 )
+             }
 
         }
     ]

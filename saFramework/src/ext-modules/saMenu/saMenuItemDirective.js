@@ -16,6 +16,9 @@ angular.module("saMenu").directive('saMenuItem',function () {
                // comparison with the selectedElement available from the function in the controller
                return el === ctrl.getActiveElement();
            };
+           scope.isVertical = function () {
+               return ctrl.isVertical() || $('el').parents('.sa-subitem-section').length>0;
+           };
             el.on('click',function (evt) {
                 evt.stopPropagation();
                 evt.preventDefault();

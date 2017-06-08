@@ -1,4 +1,9 @@
 <!--the menu gonna live in div, but the elements live in the list-->
-<div class="sa-menu-area" ng-show="showMenu">
+<div class="sa-menu-area" ng-show="showMenu" ng-class="isVertical ? 'sa-menu-area-vertical' : 'sa-menu-area-horizontal'">
     <ul class="sa-menu" ng-transclude></ul>
+    <a class="btn sa-menu-layout-button"
+       ng-class="{'sa-layout-button-horizontal':!isVertical}"
+       ng-click="toggleMenuOrientation()">
+        <i class="fa fa-chevron-up"></i>
+    </a>
 </div>

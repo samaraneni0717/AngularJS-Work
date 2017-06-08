@@ -1,10 +1,10 @@
-<li class="sa-selectableItem ">
+<li class="sa-selectableItem" ng-click="clicked()" ng-class="{'sa-item-horizontal': !isVertical()}">
     <div class="sa-noselect">
         <i class="fa {{icon}} sa-menu-icon"></i>
         {{label}}
+        <i ng-if="isVertical()" class="fa fa-chevron-left sa-group-indicator-left " ng-class="{'fa-rotate-270':isOpen}"></i>
     </div>
-
 </li>
-<div>
+<div ng-show="isOpen" class="sa-subitem-section" ng-class="{'sa-popup-menu': !isVertical()}">
     <ul ng-transclude></ul>
 </div>
