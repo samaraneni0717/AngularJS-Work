@@ -27,19 +27,42 @@ angular.module('saMenu').controller('saMenuCtrl',
                  $rootScope.$broadcast('sa-menu-item-selected-event',
                      {route:route});
              };
+                // passing the scope of the saMenuGroupDirective from that directive ctrlr
+             this.setOpenMenuScope = function (scope) {
+                 $scope.openMenuScope = scope;
+             };
             
              $scope.$on('sa-menu-show',function (evt, data) {
                   $scope.showMenu = data.show;
              });
             //whoever is using this component need to know the orientation so broadcast the event
              $scope.toggleMenuOrientation = function () {
+                 //close any open menu
+                 if($scope.openMenuScope)
+                     $scope.openMenuScope.closeMenu();
+
                  $scope.isVertical = !$scope.isVertical;
                  $rootScope.$broadcast('sa-menu-orientation-changed-event',
                      {
                          isMenuVertical: $scope.isVertical
                      }
                  )
-             }
+             };
+                //to hide the pop up menu upon any click on the screen
+        //here we are binding the click even and passing it (e)
+             angular.element(document).bind('click',function (e) {
+                 if($scope.openMenuScope  && !$scope.isVertical){
+                     //if we are clicking within the menu you return without closing the menu
+                     if($(e.target).parent().hasClass('sa-selectable-item'))
+                         return;
+                     $scope.$apply(function () {
+                         $scope.openMenuScope.closeMenu();
+                     });
+                     // the click doesn't get passed outside of the
+                     e.preventDefault();
+                     e.stopPropagation();
+                 }
+             })
 
         }
     ]
